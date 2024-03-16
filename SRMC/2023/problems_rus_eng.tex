@@ -1,0 +1,146 @@
+\documentclass[11pt,a4paper,twocolumn]{article}
+\usepackage{amsfonts, amsmath, amsthm, amssymb}
+\usepackage[landscape,left=1cm,right=1cm,top=1.5cm,bottom=1.5cm]{geometry}
+\usepackage{arcs}
+\usepackage{paralist}
+\usepackage[russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\usepackage{sectsty}
+\allsectionsfont{\centering}
+
+\usepackage{wrapfig}
+\usepackage{layout}
+\headsep=4mm
+\footskip=4.5mm
+\usepackage{floatflt}
+\usepackage{caption}
+\usepackage{multicol,lipsum}
+
+\def\frac#1#2{\mathchoice{#1\over#2}{\hbox{\small$#1$}\over\mathstrut
+    \hbox{\small$#2$}}{#1\over#2}{#1\over#2}}      
+
+
+\newcounter{zadacha}
+\newcommand{\z}{\par \smallskip \smallskip \noindent \refstepcounter{zadacha}%
+\textbf{№\arabic{zadacha}.} }
+
+\def\otv{\par \smallskip \noindent \textbf{Ответ: }}
+
+\def\sol{\par \smallskip \noindent \textbf{Решение. }}
+\def\solI{\par \smallskip \noindent \textbf{Первое решение. }}
+\def\solII{\par  \smallskip \noindent \textbf{Второе решение. }}
+\def\solIII{\par \noindent \textbf{Третье решение. }}
+\def\lemmaI{\noindent \textbf{Лемма. }}
+\def\lemma#1{\noindent \textbf{Лемма {#1}. }}
+\def\proof{\par \noindent \textbf{Доказательство. }}
+\def\q#1{\par \vspace{6pt plus 1pt minus 1pt} \noindent \textbf{№ #1.} }
+
+
+\def\timek{\begin{flushright}\textit{Time allowed is 4 hours and 30 minutes \\
+Each problem is worth 7 points}\end{flushright}}
+
+\def\timer{\begin{flushright}\textit{Время работы: 4 часа 30 минут\\
+Каждая задача оценивается в 7 баллов}\end{flushright}}
+
+\def\tur#1{XXII Математическая Олимпиада «Шёлковый путь» \\
+Март, 2023 год \\ #1}
+
+\def\turk#1{XXII Silk Road Mathematical Competition \\
+March 2023 \\ #1}
+
+
+\def\rfig#1{\parpic[r]{\includegraphics{#1}}}
+
+\makeatletter
+\newdimen\normalleftskip \normalleftskip\z@
+\newdimen\figleftskip \figleftskip\parindent
+\makeatother
+
+
+\newsavebox{\tempbox}
+
+\def\side#1{
+
+\savebox{\tempbox}{\includegraphics{#1}}%
+\savebox{\tempbox}{\hskip\figleftskip%
+   \begin{minipage}{\wd\tempbox}
+      \usebox\tempbox
+      \captionof{figure}{} \label{#1}
+   \end{minipage}}
+\begin{wrapfigure}{R}{\wd\tempbox}
+\raisebox{0pt}[\dimexpr \ht\tempbox]{\usebox\tempbox}
+\end{wrapfigure}
+
+}
+
+\usepackage{multicol}
+\setlength{\columnsep}{1cm}
+
+\begin{document}
+\pagestyle{empty}
+
+
+\newpage
+\setcounter{zadacha}{0}
+\subsubsection*{\tur{ }}
+\timer
+
+\z Внутри трапеции $ABCD$ $(AD \parallel BC)$  выбрана точка $M$, а внутри треугольника $BMC$ точка $N$ так, что $AM \parallel CN$, $BM \parallel DN$. Докажите, что у треугольников $ABN$ и $CDM$ площади равны.
+
+\z Дано натуральное $n$. В клетчатом квадрате $2n\times 2n$  каждая клетка покрашена в какой-то из $4n^2$ цветов (при этом некоторые цвета могли не использоваться). \textit{Доминошкой} будем называть любой прямоугольник из двух клеток в нашем квадрате. Будем говорить, что доминошка \textit{разноцветная}, если клетки в ней разных цветов.
+
+Пусть $k$ --- количество разноцветных доминошек среди всех доминошек в нашем квадрате. Пусть $\ell$ --- наибольшее целое число такое, что в любом разрезании квадрата на доминошки найдётся хотя бы $\ell$ разноцветных доминошек. Найдите наибольшее возможное значение выражения $4\ell - k$ по всем возможным раскраскам квадрата.
+
+\z Пусть $p$ --- простое число. Построим ориентированный граф на $p$ вершинах, пронумерованных целыми числами от $0$ до $p - 1$. В графе проводится ребро из вершины $x$ в вершину $y$ тогда и только тогда, когда $y$ равно остатку от деления на $p$ числа $x^2 + 1$. Через $f(p)$ обозначим длину самого длинного ориентированного цикла в этом графе. Докажите, что $f(p)$ может принимать сколь угодно большие значения.
+
+\z Пусть $\mathcal{M} = \mathbb{Q}[x, y, z]$ --- множество многочленов с рациональными коэффициентами от трех переменных. Докажите, что для любого ненулевого многочлена $P \in \mathcal{M}$ существуют такие ненулевые многочлены $Q, R \in \mathcal{M}$, что
+$$
+R(x^2 y, y^2 z, z^2 x)
+=
+P(x, y, z) Q(x, y, z)
+.
+$$
+
+\bigskip
+\bigskip
+\bigskip
+
+
+\textsl{\textbf{Внимание!} 
+Так как XXII Математическая Олимпиада «Шёлковый путь» проводится в разных странах в разное время, мы вас убедительно просим \textbf{не разглашать} эти задачи и не обсуждать их (особенно по Интернету) до 25 мая 2023 года.
+}
+
+\newpage
+\setcounter{zadacha}{0}
+\subsubsection*{\turk{ }}
+\timek
+
+\z Point $M$ was chosen inside trapezoid $ABCD$ $(AD \parallel BC)$, and point $N$ was chosen inside triangle $BMC$ such that $AM \parallel CN$, $BM \parallel DN$. Prove that triangles $ABN$ and $CDM$ have equal areas.
+
+\z Let $n$ be a positive integer. Each cell of a $2n\times 2n$ checkered square is painted in one of the $4n^2$ colors (some colors may be missing). We will call any two-cell rectangle in our square a \textit{domino}. We will also say that a domino is \textit{colorful} if its cells have different colors.
+
+Let $k$ be the total number of colorful dominoes in our square. Let $\ell$ be the maximum integer such that every partition of the square into dominoes contains at least $\ell$ colorful dominoes. Determine the maximum possible value of $4\ell - k$ over all possible colorings of the square. 
+
+\z Let $p$ be a prime number. Let's construct a directed graph on $p$ vertices, labeled with integers ranging from $0$ to $p - 1$. We draw an edge from vertex $x$ to vertex $y$ if and only if $y$ is equal to the remainder of division by $p$ of number $x^2 + 1$. Let $f(p)$ denote the length of the longest directed cycle in this graph. Prove that $f(p)$ can attain arbitrarily large values.
+
+\z Let $\mathcal{M} = \mathbb{Q}[x, y, z]$ be the set of three-variable polynomials with rational coefficients. Prove that for any non-zero polynomial $P \in \mathcal{M}$ there exist non-zero polynomials $Q, R \in \mathcal{M}$ such that
+$$
+R(x^2 y, y^2 z, z^2 x)
+=
+P(x, y, z) Q(x, y, z)
+.
+$$
+
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+
+\textsl{\textbf{Attention!} 
+Since the XXII Silk Road Mathematical Competition takes place in different countries on different dates, we ask you \textbf{not to disclose} these problems and not to discuss them publicly (especially through Internet) before May 25, 2023.}
+
+\end{document}
