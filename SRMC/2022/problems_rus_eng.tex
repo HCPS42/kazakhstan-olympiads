@@ -1,0 +1,127 @@
+\documentclass[11pt,a4paper,twocolumn]{article}
+\usepackage{amsfonts, amsmath, amsthm, amssymb}
+\usepackage[landscape,left=1cm,right=1cm,top=1.5cm,bottom=1.5cm]{geometry}
+\usepackage{arcs}
+\usepackage{paralist}
+\usepackage[russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\usepackage{sectsty}
+\allsectionsfont{\centering}
+
+\usepackage{wrapfig}
+\usepackage{layout}
+\headsep=4mm
+\footskip=4.5mm
+\usepackage{floatflt}
+\usepackage{caption}
+\usepackage{multicol,lipsum}
+
+\def\frac#1#2{\mathchoice{#1\over#2}{\hbox{\small$#1$}\over\mathstrut
+    \hbox{\small$#2$}}{#1\over#2}{#1\over#2}}      
+
+
+\newcounter{zadacha}
+\newcommand{\z}{\par \smallskip \smallskip \noindent \refstepcounter{zadacha}%
+\textbf{№\arabic{zadacha}.} }
+
+\def\otv{\par \smallskip \noindent \textbf{Ответ: }}
+
+\def\sol{\par \smallskip \noindent \textbf{Решение. }}
+\def\solI{\par \smallskip \noindent \textbf{Первое решение. }}
+\def\solII{\par  \smallskip \noindent \textbf{Второе решение. }}
+\def\solIII{\par \noindent \textbf{Третье решение. }}
+\def\lemmaI{\noindent \textbf{Лемма. }}
+\def\lemma#1{\noindent \textbf{Лемма {#1}. }}
+\def\proof{\par \noindent \textbf{Доказательство. }}
+\def\q#1{\par \vspace{6pt plus 1pt minus 1pt} \noindent \textbf{№ #1.} }
+
+
+\def\timek{\begin{flushright}\textit{Time allowed is 4.5 hours\\
+Each problem is worth 7 points}\end{flushright}}
+
+\def\timer{\begin{flushright}\textit{Время работы: 4 часа 30 минут\\
+Каждая задача оценивается в 7 баллов}\end{flushright}}
+
+\def\tur#1{XXI математическая олимпиада «Шёлковый путь» \\
+Март, 2022 год \\ #1}
+
+\def\turk#1{XXI Silk Road Mathematical Competition \\
+March 2022 \\ #1}
+
+
+\def\rfig#1{\parpic[r]{\includegraphics{#1}}}
+
+\makeatletter
+\newdimen\normalleftskip \normalleftskip\z@
+\newdimen\figleftskip \figleftskip\parindent
+\makeatother
+
+
+\newsavebox{\tempbox}
+
+\def\side#1{
+
+\savebox{\tempbox}{\includegraphics{#1}}%
+\savebox{\tempbox}{\hskip\figleftskip%
+   \begin{minipage}{\wd\tempbox}
+      \usebox\tempbox
+      \captionof{figure}{} \label{#1}
+   \end{minipage}}
+\begin{wrapfigure}{R}{\wd\tempbox}
+\raisebox{0pt}[\dimexpr \ht\tempbox]{\usebox\tempbox}
+\end{wrapfigure}
+
+}
+
+\usepackage{multicol}
+\setlength{\columnsep}{1cm}
+
+\begin{document}
+\pagestyle{empty}
+
+
+\newpage
+\setcounter{zadacha}{0}
+\subsubsection*{\tur{ }}
+\timer
+
+\z В окружность $\omega$ вписан выпуклый четырехугольник $ABCD$. Лучи $AB$ и $DC$ пересекаются в точке $K$. На диагонали $BD$ отмечена точка $L$ так, что $\angle BAC = \angle DAL$. На отрезке $KL$ отметили точку $M$ так, что $CM \parallel BD$. Докажите, что прямая $BM$ касается окружности $\omega$.
+
+\z Даны два различных натуральных числа $A$ и $B$. Докажите, что существует бесконечно много натуральных чисел, представимых и в виде $x_1^2+Ay_1^2$ со взаимно простыми $x_1$ и $y_1$, и в виде $x_2^2+ By_2^2$ со взаимно простыми~$x_2$ и~$y_2$.
+
+\z В бесконечной последовательности $\{\alpha\}$, $\{\alpha^2\}$, $\{\alpha^3\}$, $\ldots$  встречается только конечное количество разных чисел. Докажите, что $\alpha$ --- целое число. (Дробной частью числа $x$ называется такое число~$\{x\}$, что $\{x\} = x-[x]$, где $[x]$ это наибольшее целое число, не превосходящее $x$.)
+
+\z В письменности используется 25-буквенный алфавит, а \textit{словами} являются в точности все 17-буквенные последовательности. На полоске, склеенной в кольцо, написана последовательность из $5^{18}$ букв алфавита. Назовём слово \textit{уникальным}, если из полоски можно вырезать участок, содержащий это слово, но нельзя вырезать два таких непересекающихся участка. Известно, что из полоски можно вырезать $5^{16}$ непересекающихся копий какого-то слова. Найдите наибольшее возможное количество уникальных слов.
+
+\bigskip
+\bigskip
+\bigskip
+
+
+\textsl{\textbf{Внимание!} 
+Так как XXI Математическая олимпиада «Шёлковый путь» проводится в разных странах в разное время, мы вас убедительно просим \textbf{не разглашать} эти задачи и не обсуждать их (особенно по Интернету) до 25 мая 2022 года.
+}
+
+\newpage
+\setcounter{zadacha}{0}
+\subsubsection*{\turk{ }}
+\timek
+
+\z Convex quadrilateral $ABCD$ is inscribed in circle $\omega$. Rays $AB$ and $DC$ intersect at $K$. $L$ is chosen on the diagonal $BD$ so that $\angle BAC = \angle DAL$. $M$ is chosen on the segment $KL$ so that $CM \parallel BD$. Prove that the line $BM$ touches~$\omega$.
+
+\z Distinct positive integers $A$ and $B$ are given. Prove that there exist infinitely many positive integers that can be represented both as $x_1^2 + Ay_1^2$ for some positive coprime integers $x_1$ and $y_1$, and as $x_2^2 + By_2^2$ for some positive coprime integers $x_2$ and $y_2$.
+
+\z In an infinite sequence $\{\alpha\}$, $\{\alpha^2\}$, $\{\alpha^3\}$, \dots there are only finitely many distinct values. Show that $\alpha$ is an integer. ($\{x\}$ denotes the fractional part of $x$, i.e. $\{x\} = x - [ x ]$, where $[ x ]$ is the greatest integer not greater than $x$.)
+
+\z In a language, an alphabet with 25 letters is used; \emph{words} are exactly all sequences of (not necessarily different) letters of length $17$. Two ends of a paper strip are glued so that the strip forms a ring; the strip bears a sequence of $5^{18}$ letters. Say that a word is \emph{singular} if one can cut out a piece bearing exactly that word from the strip, but one cannot cut out two such non-overlapping pieces. It is known that one can cut out $5^{16}$ non-overlapping pieces each containing the same word. Determine the largest possible number of singular words.
+
+\bigskip
+\bigskip
+\bigskip
+
+
+\textsl{\textbf{Attention!} 
+We ask you not to \textbf{disclose} these problems and not to discuss them publicly (especially through Internet) before May 25, 2022.}
+\end{document}
